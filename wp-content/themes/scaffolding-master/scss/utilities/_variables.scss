@@ -10,15 +10,15 @@ Stylesheet: Variables
 // Fonts
 //
 
-$font__sans: apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
-$font__serif: Georgia, Times, "Times New Roman", serif;
+$font__sans: 'Poppins', sans-serif;
+$font__serif: 'IBM Plex Serif', serif;
 
 
 //
 // Sizes
 //
 
-$size__font-default: 16px;
+$size__font-default: 19px;
 
 
 //
@@ -28,21 +28,24 @@ $size__font-default: 16px;
 // Color Scheme
 // define the color name and purpose (as needed)
 // @link https://flatuicolors.com/palette/defo
-$color__black: #111;
-$color__wet-asphalt: #34495e;
-$color__amethyst: #9b59b6;
-$color__peter-river: #3498db;
+$color__black: #333333;
 $color__asbestos: #7f8c8d;
 $color__silver: #bdc3c7;
 $color__clouds: #ecf0f1;
 
-$color__body-text: $color__black;
-$color__primary: $color__wet-asphalt;
-$color__secondary: $color__amethyst;
+$color__cerise: #DA3559;
+$color__dark-charcoal: #333333;
+$color__amaranth-purple: #AE2A47;
+$color__white: #FFF;
+
+$color__body-text: $color__dark-charcoal;
+$color__primary: $color__cerise;
+$color__secondary: $color__amaranth-purple;
+
 $color__tertiary: $color__asbestos;
 $color__border: $color__asbestos;
-$color__link: $color__peter-river;
-$color__link-hover: darken($color__peter-river, 10%);
+$color__link: #DA3559;
+$color__link-hover: #AE2A47;
 $color__placeholder-text: $color__asbestos;
 
 $color__alert-yellow: #f1c40f;
@@ -110,7 +113,7 @@ $container-max-widths: (
 	sm: 540px,
 	md: 720px,
 	lg: 960px,
-	xl: 1140px
+	xl: 1200px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");

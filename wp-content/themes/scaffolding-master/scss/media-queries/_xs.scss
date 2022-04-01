@@ -28,11 +28,13 @@ body {
  * HEADER
  ************************/
 
-#masthead {}
+#masthead {
+	background-color: $color__black;
+}
 
 #inner-header {
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 3em;
+	padding-bottom: 3em;
 }
 
 #logo {
@@ -44,7 +46,9 @@ body {
 		text-decoration: none;
 	}
 }
-
+.custom-logo {
+	max-height: 61.71px;
+}
 #banner {
 	display: none;
 	background-position: top center;
@@ -132,7 +136,22 @@ body {
 }
 
 // Style individual templates
-.home {}
+.home {
+	h1, .h1,
+	h2, .h2,
+	h3, .h3 {
+		margin: 20px 0;
+	}
+	p {
+		hyphens: manual;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	#inner-content {
+		padding-top: 0em;
+		padding-bottom: 0em;
+	}
+}
 
 .blog {}
 
@@ -203,17 +222,17 @@ body {
  ************************/
 
 #colophon {
-	background-color: $color__black;
 	clear: both;
-	color: $color__tertiary;
-	font-size: 0.875em;
+	color: $color__body-text;
+	font-size: 14px;
+	text-align: center;
 
 	.copyright {
 		text-align: center;
 	}
 
 	a {
-		color: $color__tertiary;
+		color: $color__body-text;
 	}
 }
 
@@ -228,11 +247,14 @@ ul.footer-menu {
 		padding: 0;
 
 		a {
-			border-left: 1px solid $color__tertiary;
+			font-size: 14px;
+			font-family: $font__sans;
+			font-weight: 700;
 			color: $color__tertiary;
 			display: block;
 			line-height: 1;
-			padding: 0 0.675em;
+			padding: 2em 1em;
+			text-transform: uppercase;
 		}
 
 		&:first-child {
@@ -253,7 +275,38 @@ ul.footer-menu {
 		display: none; // hide child ul as design does not support it
 	}
 }
+ul.footer__social-media {
+	list-style-type: none;
+	padding: 2em 0;
+	li{
+		margin-left: 0;
+		display: inline-block;
+		a {
+			display: block;
+			padding: 0 1em;
+		}
+		&:first-child {
+			a {
+				padding-left: 0;
+				border-left: 0;
+			}
+		}
 
+		&:last-child {
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+}
+.footer-social-icon {
+	transition: ease-in-out .2s;
+	fill: $color__link;
+	&:hover,
+	&:focus {
+		fill: $color__link-hover;
+	}
+}
 // scroll to top link
 #back-top {
 	margin: 0;
@@ -282,5 +335,105 @@ ul.footer-menu {
 
 	.fas {
 		line-height: 1.675em;
+	}
+}
+
+// BLOCK
+.alignfull {
+	width:100vw;
+	position:relative;
+	left:calc(-1 * (100vw - 100%)/2);
+}
+.wp-block-group__inner-container,
+.wp-block-cover__inner-container {
+	margin: auto;
+	max-width: map-get($container-max-widths, 'xl');
+}
+.wp-block-button__link {
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	overflow: visible;
+	left: auto;
+	background-color: $color__link;
+	border: 0;
+	background-image: none;
+	box-shadow: none;
+	text-shadow: none;
+	text-transform: none;
+	border-radius: 0;
+	font-weight: 700;
+	font-family: $font__sans;
+	text-transform: uppercase;
+	transition: ease-in-out .2s;
+
+	&:hover,
+	&:focus {
+		background-color: $color__link-hover;
+		text-decoration: none;
+		background-image: none;
+	}
+}
+
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+	margin-top: 1em;
+}
+
+// Separator
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	width: 100%;
+	max-width: 246px;
+}
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+	height: 4px;
+}
+.wp-block-separator {
+	opacity: 1;
+}
+
+// Quote
+.wp-block-quote {
+	border-left: none;
+	padding-left: 0;
+	font-size: 32px;
+	font-style: italic;
+	text-align: center;
+	letter-spacing: 0.01em;
+	padding-bottom: 2em;
+	padding-top: 1.5em;
+	border-bottom: 2px solid $color__primary;
+	border-top: 2px solid $color__primary;
+	position: relative;
+
+	&:after {
+		content: '';
+		background-color: #FFF;
+		background-image: url( '../images/quotes.svg' );
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		max-width: 220px;
+		height: 40.89px;
+		display: block;
+		position: absolute;
+		top: -23px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+// Latests Posts.
+.wp-block-latest-posts__featured-image{
+	img {
+		width: 100%;
+	}
+}
+.wp-block-latest-posts {
+	a,
+	.wp-block-latest-posts__post-excerpt {
+		padding: 0 1em;
+		display: inline-block;
 	}
 }

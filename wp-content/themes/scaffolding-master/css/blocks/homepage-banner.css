@@ -1,0 +1,31 @@
+.scaffolding-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 992px) {
+  .homepage_banner__container {
+    padding-left: 4em;
+  }
+}
+.hompage-banner__content {
+  max-width: 550px;
+}
+
+@media screen and (min-width: 1920px) {
+  .scaffolding-banner {
+    background-position: center top;
+    min-height: 900px;
+  }
+}

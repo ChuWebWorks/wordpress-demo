@@ -10,6 +10,20 @@ Stylesheet: Small Mobile Device
  * GENERAL
  ************************/
 
+@media screen and (min-width: 600px) and (max-height: 1200px) {
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child) {
+		flex-basis: 100% !important;
+	}
+	.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+		flex-basis: 100% !important;
+		margin-left: 0;
+	}
+}
+@media screen and (min-width: 783px) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+		margin-left: 2em;
+	}
+}
 /*************************
  * HEADER
  ************************/
@@ -21,3 +35,10 @@ Stylesheet: Small Mobile Device
 /*************************
  * FOOTER
  ************************/
+ ul.footer-menu {
+	li {
+		a {
+			padding: 0em 1em;
+		}
+	}
+}

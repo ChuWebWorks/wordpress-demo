@@ -13,7 +13,16 @@ Stylesheet: Desktop
 /*************************
  * HEADER
  ************************/
-
+ #logo {
+	width: auto;
+    text-align: initial;
+    margin-bottom: initial;
+    max-width:200px;
+}
+#main-navigation {
+    margin-top: initial;
+    width: auto;
+}
 /*************************
  * POSTS & CONTENT
  ************************/

@@ -9,11 +9,17 @@ Stylesheet: Large Desktop
 /*************************
  * GENERAL
  ************************/
-
+@media screen and (min-width: 1200px) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+		margin-left: 7em;
+	}
+}
 /*************************
  * HEADER
  ************************/
-
+ #logo {
+    max-width: initial;
+}
 /*************************
  * POSTS & CONTENT
  ************************/

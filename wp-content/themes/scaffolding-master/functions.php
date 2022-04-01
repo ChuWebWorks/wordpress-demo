@@ -46,13 +46,10 @@ require_once SCAFFOLDING_INCLUDE_PATH . 'base-functions.php';
 require_once SCAFFOLDING_INCLUDE_PATH . 'class-scaffolding-walker-nav-menu.php';
 require_once SCAFFOLDING_INCLUDE_PATH . 'tinymce-settings.php';
 // require_once( SCAFFOLDING_INCLUDE_PATH . 'theme-guide.php' );
-// WooCommerce Customizations.
-if ( function_exists( 'is_woocommerce' ) ) {
-	require_once SCAFFOLDING_INCLUDE_PATH . 'woocommerce-customizations.php';
-}
+
 // Gravity Forms Customizations.
-if ( class_exists( 'GFForms' ) ) {
-	require_once SCAFFOLDING_INCLUDE_PATH . 'gf-customizations.php';
+if ( class_exists( 'ACF' ) ) {
+	require_once SCAFFOLDING_INCLUDE_PATH . 'acf-customizations.php';
 }
 // commonWP Support https://wordpress.org/plugins/commonwp/ for details.
 require_once SCAFFOLDING_INCLUDE_PATH . 'commonwp.php';
@@ -74,6 +71,22 @@ function scaffolding_scripts_and_styles() {
 	/**
 	 * Fonts
 	 */
+
+	 // Poppins font.
+	$poppins_args = array(
+		'family'  => 'Poppins:wght@500;600;700',
+		'display' => 'swap',
+	);
+	wp_register_style( 'scaffolding-poppins', esc_url( add_query_arg( $poppins_args, 'https://fonts.googleapis.com/css2' ) ), array(), '2.0', 'screen' );
+	wp_enqueue_style( 'scaffolding-poppins' );
+
+	// IBM Plex Serif font.
+	$ibm_plex_serif_args = array(
+		'family'  => 'IBM+Plex+Serif:ital@0;1',
+		'display' => 'swap',
+	);
+	wp_register_style( 'scaffolding-ibm_plex_serif', esc_url( add_query_arg( $ibm_plex_serif_args, 'https://fonts.googleapis.com/css2' ) ), array(), '2.0', 'screen' );
+	wp_enqueue_style( 'scaffolding-ibm_plex_serif' );
 
 	// Font Awesome (icon set) - https://fontawesome.com/.
 	// this may be updated to include only specific icon sets: brands, solid, regular.
@@ -161,8 +174,8 @@ function scaffolding_theme_support() {
 		array(
 			'height'      => 100,   // Make sure to set this.
 			'width'       => 216,   // Make sure to set this.
-			'flex-width'  => false,
-			'flex-height' => false,
+			'flex-width'  => true,
+			'flex-height' => true,
 		)
 	);
 
@@ -261,6 +274,34 @@ function scaffolding_theme_support() {
 	// Add styles for use in visual editor.
 	add_editor_style( 'css/editor-styles.css' );
 	add_editor_style( 'css/libs/fontawesome/fontawesome-all.css' );
+
+	add_theme_support('align-wide');
+
+	add_theme_support(
+		'editor-color-palette',
+		array(
+			array(
+				'name'  => esc_html__('Cerise', 'scaffolding'),
+				'slug'  => 'cerise',
+				'color' => '#DA3559',
+			),
+			array(
+				'name'  => esc_html__('Dark Charcoal', 'scaffolding'),
+				'slug'  => 'dark-charcoal',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => esc_html__('Amaranth Purple', 'scaffolding'),
+				'slug'  => 'amaranth-purple',
+				'color' => '#AE2A47',
+			),
+			array(
+				'name'  => esc_html__('White', 'scaffolding'),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+		)
+	);
 
 } // end scaffolding_theme_support()
 
@@ -727,6 +768,9 @@ function scaffolding_change_post_object_label() {
 add_action( 'init', 'scaffolding_change_post_object_label' );
 */
 
+if ( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
 
 /************************************
  * 11.0 CUSTOM/ADDITIONAL FUNCTIONS

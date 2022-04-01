@@ -66,7 +66,8 @@ It currently slides out from the right.
 		margin: 0;
 		overflow: hidden;
 		white-space: nowrap;
-
+		font-family: $font__sans;
+		transition: ease-in-out .2s;
 		// Font Awesome Icon
 		&:before {
 			font-family: "Font Awesome 5 Free";
@@ -79,12 +80,16 @@ It currently slides out from the right.
   			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
+
+		&:hover,
+		&:focus {
+			background-color: $color__link-hover;;
+		}
 	}
 
 	// Mobile Styles
 	#main-navigation {
 		button.menu-button {
-			border-left: 1px solid darken($color__primary, 10%);
 			color: #FFF;
 			font-size: 1.5em;
 			display: inline-block;
@@ -119,7 +124,6 @@ It currently slides out from the right.
 
 		li {
 			display: block;
-			border-bottom: 1px solid darken($color__primary, 10%);
 
 			a {
 				color: #FFF;
@@ -128,24 +132,22 @@ It currently slides out from the right.
 				padding: 15px;
 				text-decoration: none;
 				width: 75%;
+				font-family: $font__sans;
+				text-transform: uppercase;
+				font-weight: 700;
+				border-bottom: 2px solid $color__link-hover;
 
 				&:hover,
 				&:focus {
-					background-color: inherit;
+					background-color: $color__link-hover;
 				}
 			}
-
-			&.current-menu-item {}
-
-			&.current-menu-ancestor {}
 
 			&.menu-item-no-children {
 				a {
 					width: 100%;
 				}
 			}
-
-			&.menu-item-has-children {}
 		}
 
 		ul.sub-menu {
@@ -241,13 +243,17 @@ It currently slides out from the right.
 					font-size: 1em;
 					color: #FFF;
 					display: block;
-					border-left: 1px solid lighten($color__black, 15%);
-					padding-top: 0.5em;
-					padding-bottom: 0.5em;
+					padding-top: 0em;
+					padding-bottom: 0em;
 					padding-left: 12px;
 					padding-right: 12px;
 					text-align: center;
 					width: auto;
+					border-bottom: 2px solid rgba( 0, 0, 0, 0);
+					font-family: $font__sans;
+					font-weight: 700;
+					font-size: 20px;
+					text-transform: uppercase;
 
 					&:hover,
 					&:focus {
@@ -259,7 +265,7 @@ It currently slides out from the right.
 				&:hover,
 				&:focus {
 					a {
-						background-color: lighten($color__black, 15%);
+						border-bottom: 2px solid $color__primary;
 					}
 				}
 
@@ -267,7 +273,6 @@ It currently slides out from the right.
 
 				&:last-child {
 					> a {
-						border-right: 1px solid lighten($color__black, 15%);
 					}
 
 					// Children
@@ -285,9 +290,24 @@ It currently slides out from the right.
 					}
 				}
 
-				&.menu-item-no-children {}
+				&.main-nav__contact-us {
+					background: $color__link;
+					margin-left: 1em;
+					transition: ease-in-out .2s;
 
-				&.menu-item-has-children {}
+					&:hover,
+					&:focus {
+						background-color: $color__link-hover;
+					}
+			
+					a {
+						border-bottom: none;
+						&:hover,
+						&:focus {
+							border-bottom: none;
+						}
+					}
+				}
 			}
 
 		}
@@ -326,17 +346,6 @@ It currently slides out from the right.
 					}
 				}
 
-				&:hover,
-				&:focus {}
-
-				&:first-child {}
-
-				&:last-child {}
-
-				&.menu-item-no-children {}
-
-				&.menu-item-has-children {}
-
 				// Grand Children
 				ul.sub-menu {
 					left: 99.9%;
@@ -350,7 +359,6 @@ It currently slides out from the right.
 			display: block;
 		}
 	}
-
 }
 
 //
@@ -364,10 +372,12 @@ It currently slides out from the right.
 			li.menu-item {
 				a {
 					font-size: 1.125em;
-					padding-top: 0.675em;
-					padding-bottom: 0.675em;
-					padding-left: 20px;
-					padding-right: 20px;
+					padding-top: 0.25em;
+					padding-bottom: 0.25em;
+					padding-left: 0px;
+					padding-right: 0px;
+					margin-left: 20px;
+					margin-right: 20px;
 				}
 			}
 		}
@@ -383,15 +393,5 @@ It currently slides out from the right.
 			}
 		}
 	}
-
-}
-
-//
-// LARGE DESKTOP
-//
-
-@include media-breakpoint-up('xl') {
-
-	#main-navigation {}
 
 }

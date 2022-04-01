@@ -1,0 +1,44 @@
+@import "../utilities/all-utilities";
+
+.recent-posts__cards-wrapper {
+    padding: 1em;
+    display: flex;
+}
+.recent-posts__cards {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    transition: ease-in-out .2s;
+
+    &:hover,
+    &:focus {
+        color: $color__body-text;
+        text-decoration: none;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+
+        .recent-posts__read-more {
+            color: $color__link-hover;
+        }
+    }
+    img {
+        width: 100%;
+    }
+    p,
+    .recent-posts__title,
+    .recent-posts__read-more {
+        padding: 0 1em;
+        color: $color__body-text;
+    }
+    .recent-posts__title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    .recent-posts__read-more {
+        text-decoration: underline;
+        color: $color__link;
+        margin-top: auto;
+    }
+}
+

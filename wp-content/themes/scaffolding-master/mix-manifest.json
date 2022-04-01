@@ -1,7 +1,7 @@
 {
-    "/css/plugins/woocommerce/cart.css": "/css/plugins/woocommerce/cart.css",
-    "/css/plugins/woocommerce/product.css": "/css/plugins/woocommerce/product.css",
-    "/css/plugins/woocommerce/global.css": "/css/plugins/woocommerce/global.css",
+    "/css/libs/fontawesome/all.css": "/css/libs/fontawesome/all.css",
+    "/css/blocks/recent-posts.css": "/css/blocks/recent-posts.css",
+    "/css/blocks/homepage-banner.css": "/css/blocks/homepage-banner.css",
     "/css/editor-styles.css": "/css/editor-styles.css",
     "/css/login.css": "/css/login.css",
     "/css/style.css": "/css/style.css",
@@ -9,9 +9,5 @@
     "/css/libs/fontawesome/solid.css": "/css/libs/fontawesome/solid.css",
     "/css/libs/fontawesome/regular.css": "/css/libs/fontawesome/regular.css",
     "/css/libs/fontawesome/fontawesome.css": "/css/libs/fontawesome/fontawesome.css",
-    "/css/libs/fontawesome/brands.css": "/css/libs/fontawesome/brands.css",
-    "/css/libs/fontawesome/all.css": "/css/libs/fontawesome/all.css",
-    "/css/plugins/woocommerce/blocks.css": "/css/plugins/woocommerce/blocks.css",
-    "/css/plugins/woocommerce/myaccount.css": "/css/plugins/woocommerce/myaccount.css",
-    "/css/plugins/woocommerce/checkout.css": "/css/plugins/woocommerce/checkout.css"
+    "/css/libs/fontawesome/brands.css": "/css/libs/fontawesome/brands.css"
 }
